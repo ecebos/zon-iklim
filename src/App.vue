@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import { RouterLink, RouterView, useRoute } from 'vue-router'
-import logo from './assets/img/Güneş ve Kar Tanesi İklim Logosu.png'
+import logo from './assets/img/zon-iklim-logo.png'
 
 const menuOpen = ref(false)
 const servicesMenuOpen = ref(false)
