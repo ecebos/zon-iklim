@@ -42,7 +42,7 @@ const heroImage = servicePhotoGroups['isitma-sogutma'].at(-1).src
       <div class="hero-side-note">KONFOR, DOĞRU DETAYLARDA SAKLI.</div>
     </section>
 
-    <section class="intro-strip" aria-label="Zon İklim yaklaşımı">
+    <section class="intro-strip" aria-label="Zon İklimlendirme yaklaşımı">
       <p>Her mekânın kendine özgü bir <span>iklimi</span> vardır.</p>
       <span class="intro-mark" aria-hidden="true">Z.</span>
     </section>
@@ -50,7 +50,7 @@ const heroImage = servicePhotoGroups['isitma-sogutma'].at(-1).src
     <section class="home-overview section-pad">
       <div class="section-heading">
         <div>
-          <p class="eyebrow"><span></span> ZON İKLİM</p>
+          <p class="eyebrow"><span></span> ZON İKLİMLENDİRME</p>
           <h2>İhtiyacınıza göre<br /><span>doğru iklimlendirme.</span></h2>
         </div>
         <p class="section-aside">
@@ -64,7 +64,7 @@ const heroImage = servicePhotoGroups['isitma-sogutma'].at(-1).src
           <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M8 3l5 5-5 5" /></svg>
         </RouterLink>
         <RouterLink to="/hakkimizda">
-          <span>Zon İklim'i tanıyın</span>
+          <span>Zon İklimlendirme'yi tanıyın</span>
           <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M8 3l5 5-5 5" /></svg>
         </RouterLink>
       </div>

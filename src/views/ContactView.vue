@@ -64,7 +64,7 @@ const mapEmbedUrl = `https://maps.google.com/maps?q=${mapQuery}&output=embed`
           <iframe
             class="contact-map"
             :src="mapEmbedUrl"
-            title="Zon İklim adres haritası"
+            title="Zon İklimlendirme adres haritası"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
           ></iframe>

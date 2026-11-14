@@ -20,8 +20,8 @@ const scrollToTop = () => {
 <template>
   <div class="site-shell">
     <header class="site-header">
-      <RouterLink class="wordmark" to="/" aria-label="Zon İklim ana sayfa" @click="closeMenu">
-        <img class="wordmark-logo" :src="logo" alt="Zon İklim" />
+      <RouterLink class="wordmark" to="/" aria-label="Zon İklimlendirme ana sayfa" @click="closeMenu">
+        <img class="wordmark-logo" :src="logo" alt="Zon İklimlendirme" />
       </RouterLink>
 
       <button
@@ -76,10 +76,10 @@ const scrollToTop = () => {
     </main>
 
     <footer class="site-footer">
-      <RouterLink class="wordmark footer-wordmark" to="/" aria-label="Zon İklim ana sayfa">
-        <img class="wordmark-logo" :src="logo" alt="Zon İklim" />
+      <RouterLink class="wordmark footer-wordmark" to="/" aria-label="Zon İklimlendirme ana sayfa">
+        <img class="wordmark-logo" :src="logo" alt="Zon İklimlendirme" />
       </RouterLink>
-      <span class="footer-copy">© 2026 ZON İKLİM. TÜM HAKLARI SAKLIDIR.</span>
+      <span class="footer-copy">© 2026 ZON İKLİMLENDİRME. TÜM HAKLARI SAKLIDIR.</span>
       <a class="back-top" href="#" @click.prevent="scrollToTop">
         BAŞA DÖN <span>↑</span>
       </a>

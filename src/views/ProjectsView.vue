@@ -13,7 +13,7 @@ const projects = [
     number: '02',
     category: 'YANGIN TESİSATI',
     title: 'Yangın güvenliği sistemleri',
-    image: servicePhotoGroups['yangin-tesisati'][1].src,
+    image: servicePhotoGroups['yangin-tesisati'][0].src,
     alt: 'Yangın tesisatı ve yangın dolabı uygulaması',
   },
   {

@@ -46,7 +46,7 @@ const router = createRouter({
 
 router.afterEach((to) => {
   const title = typeof to.meta.title === 'function' ? to.meta.title(to) : to.meta.title
-  document.title = `${title} | Zon İklim`
+  document.title = `${title} | Zon İklimlendirme`
 })
 
 export default router

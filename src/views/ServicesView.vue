@@ -37,8 +37,11 @@ const services = [
     number: '02',
     title: 'Yangın tesisatı',
     shortTitle: 'Yangın tesisatı',
-    image: servicePhotoGroups['yangin-tesisati'][1].src,
-    images: featureFirst(servicePhotoGroups['yangin-tesisati'], 1),
+    image: servicePhotoGroups['yangin-tesisati'][0].src,
+    images: featureFirst(
+      servicePhotoGroups['yangin-tesisati'].filter((photo) => photo.filename !== 'yangin2.JPG'),
+      0,
+    ),
     description:
       'Binaların yangın güvenliği ihtiyaçlarına yönelik yangın tesisatı ve ilgili sistemlerin kurulumu.',
     detail:
@@ -58,7 +61,9 @@ const services = [
     title: 'Bakım – onarım',
     shortTitle: 'Bakım – onarım',
     image: servicePhotoGroups['bakim-onarim'][1].src,
-    images: featureFirst(servicePhotoGroups['bakim-onarim'], 1),
+    images: featureFirst(servicePhotoGroups['bakim-onarim'], 1).filter(
+      (_, index) => index !== 2 && index !== 4 && index !== 7,
+    ),
     description:
       'Isıtma, soğutma ve havalandırma cihazları için arıza tespiti, bakım ve onarım hizmetleri.',
     detail:
@@ -162,6 +167,7 @@ watch(
           v-for="(photo, index) in selectedService.images.slice(1)"
           :key="photo.filename"
           class="service-gallery-item"
+          :class="{ 'service-gallery-item-lower-image': photo.filename === 'yangin5.JPG' }"
         >
           <img
             :src="photo.src"
