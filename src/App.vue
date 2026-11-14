@@ -1,11 +1,44 @@
 <script setup>
-import { ref } from 'vue'
+import { nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { RouterLink, RouterView, useRoute } from 'vue-router'
 import logo from './assets/img/zon-iklim-logo.png'
 
 const menuOpen = ref(false)
 const servicesMenuOpen = ref(false)
 const route = useRoute()
+let revealObserver
+
+const revealTargets = [
+  '.hero',
+  '.intro-strip',
+  '.section-heading',
+  '.home-links',
+  '.about-image',
+  '.about-copy',
+  '.service-row',
+  '.service-detail-top',
+  '.service-gallery',
+  '.service-detail-content',
+  '.service-switcher',
+  '.projects-heading',
+  '.project-card',
+  '.partners-title',
+  '.partner-card',
+  '.contact-heading',
+  '.contact-card',
+  '.not-found > *',
+].join(', ')
+
+const observeRevealTargets = () => {
+  if (!revealObserver) return
+
+  const targets = document.querySelectorAll(`main ${revealTargets}`)
+  targets.forEach((target) => {
+    target.classList.remove('is-revealed')
+    target.classList.add('scroll-reveal')
+    revealObserver.observe(target)
+  })
+}
 
 const closeMenu = () => {
   menuOpen.value = false
@@ -15,6 +48,43 @@ const closeMenu = () => {
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' })
 }
+
+onMounted(() => {
+  if (
+    !('IntersectionObserver' in window) ||
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  ) {
+    return
+  }
+
+  document.documentElement.classList.add('has-scroll-reveal')
+  revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return
+
+        entry.target.classList.add('is-revealed')
+        revealObserver.unobserve(entry.target)
+      })
+    },
+    { threshold: 0.12, rootMargin: '0px 0px -36px 0px' },
+  )
+
+  observeRevealTargets()
+})
+
+watch(
+  () => route.fullPath,
+  async () => {
+    await nextTick()
+    observeRevealTargets()
+  },
+)
+
+onBeforeUnmount(() => {
+  revealObserver?.disconnect()
+  document.documentElement.classList.remove('has-scroll-reveal')
+})
 </script>
 
 <template>

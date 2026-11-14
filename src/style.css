@@ -68,8 +68,30 @@ a:focus-visible {
   background: #4a4a46;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .has-scroll-reveal .scroll-reveal,
+  .has-scroll-reveal .scroll-reveal.is-revealed {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 .site-shell {
   overflow: hidden;
+}
+
+.has-scroll-reveal .scroll-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 650ms ease,
+    transform 650ms cubic-bezier(0.2, 0.65, 0.3, 1);
+}
+
+.has-scroll-reveal .scroll-reveal.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .site-header {
