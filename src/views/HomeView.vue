@@ -1,7 +1,7 @@
 <script setup>
 import { servicePhotoGroups } from '../assets/servicePhotos'
 
-const heroImage = servicePhotoGroups['isitma-sogutma'].at(-1).src
+const heroImage = servicePhotoGroups['yangin-tesisati'][0].src
 </script>
 
 <template>
@@ -30,7 +30,7 @@ const heroImage = servicePhotoGroups['isitma-sogutma'].at(-1).src
       <div class="hero-visual">
         <img
           :src="heroImage"
-          alt="Bir mekâna monte edilmiş tavan tipi iklimlendirme cihazı"
+          alt="Yangın tesisatı uygulamasından bir görünüm"
         />
         <div class="image-wash"></div>
         <div class="hero-image-label">

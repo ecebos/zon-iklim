@@ -457,7 +457,7 @@ p {
   position: absolute;
   inset: 0;
   filter: saturate(0.82);
-  object-position: center;
+  object-position: 75% center;
 }
 
 .image-wash {
